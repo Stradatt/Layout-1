@@ -62,17 +62,17 @@ body {
 	color: #070707;
 }
 
-.background__grey {
+.page__background-grey {
 	background-color: #F6F6F6;
 	height: auto;
 }
 
-.background__white {
+.page__background-white {
 	background-color: #FFFFFF;
 	height: auto;
 }
 
-.wrapper__hero {
+.wrapper {
 	max-width: 975px;
 	min-height: 100%;
    margin-left: auto;
@@ -85,19 +85,22 @@ body {
 	height: 88px;
 }
 
-.menu__list{
+.menu-list{
 	padding-top: 33px;
 	display: flex;
 	justify-content: space-between;
 }
-.bold a{
-	color: #070707;
-	font-weight: 700;
-}
 
-.medium  a{
+.menu-list__link  a{
 	color: #828282;
 }
+
+.menu-list__link_bold a{
+	color: #070707;
+	font-weight: 700;
+   
+}
+
 
 hr{
 	border: 0;
@@ -107,7 +110,7 @@ hr{
   	height: 1px;
 }
 
-.wrapper__hero-name {
+.hero-name {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -115,7 +118,7 @@ hr{
    
 }
 
-.name {
+.hero-name__name {
 	font-weight: 700;
 	font-size: 47px;
 	line-height: 59px;
@@ -125,25 +128,24 @@ hr{
 	height: auto;
 }
 
-.prof {
-	
+.hero-name__prof {
 	line-height: 22px;
 	margin-left: -15px;
 	
 }
 
-.lang {
+.hero-name__lang {
 	font-size: 16px;
 	transform: rotate(-90deg);
 	margin-bottom: 28px;
 	margin-right: -20px;
    
 }
-.lang a:first-child{
+.hero-name__lang a:first-child{
    color:#828282;
 }
 
-.lang a:last-child{
+.hero-name__lang a:last-child{
    color:#000;
 }
 
@@ -151,42 +153,34 @@ hr{
    top: 0;
 }
 
-.wrapper__hero-img {
+.hero-img {
    width: 100%;
 }
 
-.full-img{
+.hero-img__full-img{
 	height: auto;
   	width: 100%;
   	max-width: 945px;
 	}
 
-.mobile-img{
+.hero-img__mobile-img{
    display: none;
 }
 
-   
-.wrapper__main-about {
-	max-width: 975px;
-	min-height: 100%;
+.page__about{
+   margin: 103px 0 0;
    margin-left: auto;
    margin-right: auto;
-   text-align: center;
-   border: 1px solid #F6F6F6;
-   padding: 0 15px;
-}
-
-.margin-block{
-	margin: 14% 0 12% 0;
-	
 }
 
 
-.wrapper__main-about H2{
+.about__title{
+   padding-top: 120px;
 	display: block;
 	font-weight: 700;
 	font-size: 34px;
 	margin-bottom: 24px;
+   text-align: center;
 }
 
 .about-text{
@@ -196,7 +190,8 @@ hr{
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	
+   text-align: center;
+	padding-bottom: 115px;
 }
 
 .about-text p:nth-child(1){
@@ -206,86 +201,95 @@ hr{
 	padding-bottom: 45px;
 }
 
-.wrapper__main-skills {
-	max-width: 975px;
-	min-height: 100%;
-   margin-left: auto;
-   margin-right: auto;
+.page__skills {
+   margin-top: 91px;
+   margin-bottom: 114px;
    text-align: center;
-	font-size: 18px;
-   margin-top: 4.5%;
-   margin-bottom: 5.2%;
-   padding: 0 15px;
-}
+} 
 
-.wrapper__main-skills H2{
+.skills__h2{
 	display: block;
 	font-weight: 700;
 	font-size: 34px;
 	margin-bottom: 69px;
 }
 
-.wrapper__main-skills p{
-
+.skills__p{
    margin-bottom: 10%;
 }
 
 .programm-skills {
-   
-   display: flex;
-   justify-content: space-between;
+   display: flex;  
    flex-wrap: wrap;
-   
-   /*
-   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-   border: 1px solid #070707;
-   gap: 15px 15px;
-   padding: 0;
-   */
-   
+   margin: 0 -15px;
 }
-
-.programm-skills img{
-   padding: 10px;
-}
-
-.wrapper__main-portfolio {
-	max-width: 975px;
-	min-height: 100%;
-   margin-left: auto;
-   margin-right: auto;
-   text-align: center;
+.programm-skill {
+   flex: 0 0 25%;
+   max-width: 25%;
    padding: 0 15px;
-	
 }
 
-.wrapper__main-portfolio H2{
+.programm-skills__img{
+   margin-bottom: 5px;
+}
+
+.programm-skills__p{
+   font-weight: 700;
+}
+
+.stars{
+   margin-top: 38px;
+}
+.stars-4{
+   margin-top: 52px;
+}
+
+.programm-skills__star{
+   fill: #E5E5E5;
+   margin-right: 7px;
+   
+}
+
+.programm-skills__star_active {
+   fill: #070707;
+}
+
+
+.programm-skills__p{
+   margin-top: 15px;
+   color: #828282;
+   font-size: 14px;
+}
+
+.page-portfolio{
+   text-align: center;
+}
+
+.portfolio__h2{
 	display: block;
 	font-weight: 700;
 	font-size: 34px;
 	margin-bottom: 7.7%;
    padding-top: 14%;
+   text-align: center;
+}
+
+.portfolio-img__underline {
+   padding-top: 4%;
+   padding-bottom: 10.5%;
+   text-align: center;
+}
+
+.portfolio-img__underline a{
+   color:#000;
+   text-decoration: underline;
    
 }
 
-.portfolio-img figcaption {
-   padding-top: 4%;
-   padding-bottom: 10.5%;
-}
-
-.underline a{
-   color:#000;
-   text-decoration: underline;
-}
-
-.portfolio-img img{
-	height: auto;
-  	width: 100%;
-  	max-width: 945px;
-	}
 
 
-.wrapper__footer {
+
+.page__footer {
 	max-width: 975px;
 	min-height: 100%;
    margin-left: auto;
@@ -295,75 +299,90 @@ hr{
    padding: 0 15px;
 }
 
-.wrapper__footer H2{
+.footer H2{
 	display: block;
 	font-weight: 700;
 	font-size: 34px;   
 }
 
-.welcome-text{
+.footer__welcome{
    margin: 3.5% auto 3.5%;
 }
 
-.mail-botton {
+.footer__button {
    display: inline-block;
    background-color: black;
    border-radius: 50px;
    font-weight: 500;
    max-width: 250px;
    margin: 0 auto 9.3% auto;
-   padding: 13px 29px 12px;
+   
 }
 
-.mail-botton a{
+.footer__button a{
    color:#FFFFFF;
    letter-spacing: 0.04em;
    font-size: 17px;
+   display: block;
+   height: 100%;
+   padding: 13px 29px 12px;
+   border-radius: 50px;
 }
 
-.footer-icons img{
-	height: auto;
-  	width: 100%;
-  	max-width: 700px;
-	}
+.footer__button a:hover{
+   box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.3);
+}
 
-.end-text {
+
+.page__footer-icons{
+   max-width: 355px;
+   margin: 0 -15px;
+   margin: auto;
+}
+
+.footer-icons {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.footer-icon {
+   flex: 0 0 25%;
+   max-width: 25%;
+   padding: 0 15px;
+}
+
+.footer__end {
    font-size: 14px;
    color: #828282;
    letter-spacing: 0.03em;
    line-height: 17px;
-   
    margin-top: 4%;
    padding-bottom: 5%;
-
-
 }
 
 @media (max-width:415px){
-
    body.lock{
       overflow: hidden;
-
    }
 
-   .wrapper__hero {
+   .wrapper-hero {
       padding: 0 29px;
       position: relative;
    }
    
-   .wrapper__main-about {
+   .page-about {
       padding: 0 29px;
    }
 
-   .wrapper__main-skills {
+   .page__skills {
       padding: 0 29px;
    }
 
-   .wrapper__main-portfolio {
+   .page-portfolio {
       padding: 0 29px;
    }
    
-   .wrapper__footer {
+   .wrapper-footer {
       padding: 0 29px;
    }
 
@@ -373,11 +392,11 @@ hr{
    }
    
 
-   .wrapper__hero-header{
+   .hero-header{
       height: 0;
    }
 
-   .menu{
+   .menu-list{
       position: fixed;
       top: -200%;
       left: 0;
@@ -390,23 +409,22 @@ hr{
 
    }
    
-   .menu.active {
+   .menu-list.active {
       top: 0;
    }
-   .menu__list{
+   .menu-list{
       display: block;
       padding: 68px 26px;
       font-size: 34px;
       font-weight: 700;
    }
    
-   .menu__list li{
+   .menu-list li{
       padding: 0 0 65px 0;
-      
    }
 
 
-   .menu__burger {
+   .hero-burger {
       display: block;
       position: absolute;
       width: 33px;
@@ -417,8 +435,8 @@ hr{
    }
 
 
-   .menu__burger::before,
-   .menu__burger::after{
+   .hero-burger::before,
+   .hero-burger::after{
       content: '';
       background-color: #000;
       position: absolute;
@@ -428,15 +446,15 @@ hr{
       transition: all 0.3s ease 0s;
    }
 
-   .menu__burger::before{
+   .hero-burger::before{
       top: 0;
    }
 
-   .menu__burger::after{
+   .hero-burger::after{
       bottom: 0;
    }
 
-   .menu__burger span{
+   .hero-burger span{
       position: absolute;
       background-color: #000;
       position: absolute;
@@ -447,23 +465,23 @@ hr{
       transition: all 0.3s ease 0s;      
    }
    
-   .menu__burger.active::before{
+   .hero-burger.active::before{
       transform: rotate(45deg);
       background-color: #828282;
       top: 8px;
    }
 
-   .menu__burger.active::after{
+   .hero-burger.active::after{
       transform: rotate(-45deg);
       background-color: #828282;
       bottom: 8px;
    }
 
-   .menu__burger.active span{
+   .hero-burger.active span{
       transform: scale(0);
    }
 
-   .wrapper__hero-name {
+   .hero-name {
       display: block;
       padding-top: 55px;
       padding-bottom: 41px;
@@ -471,16 +489,16 @@ hr{
       top: 0;
    }
    
-   .wrapper__hero-name p{
+   .hero-name p{
       margin-top: 34px;
       padding-left: 15px;
    }
 
-   .name {
+   .hero-name__name {
       padding-top: 0;
    }
 
-   .lang {
+   .hero-name__lang {
       position: fixed;
       font-size: 34px;
       transform: rotate(90deg);
@@ -491,22 +509,22 @@ hr{
       transition: all 0.3s ease 0s;
    }
    
-   .lang.active {
+   .hero-name__lang.active {
       top: 744px;
    }
 
-   .full-img{
+   .hero-img__full-img{
       display: none;
    }
    
-   .mobile-img{
+   .hero-img__mobile-img{
       display: flex;
       height: auto;
       width: 100%;
       max-width: 365px;
       
    }
-   .wrapper__hero-img{
+   .hero-img{
       padding-bottom: 82px ;
    }
    
@@ -514,7 +532,7 @@ hr{
       margin: 82px 0 84px 0;
    }
 
-   .wrapper__main-about H2{
+   .h2-about{
       margin-bottom: 48px;
    }
    
@@ -525,33 +543,24 @@ hr{
       padding-bottom: 48px;
    }
    
-   .wrapper__main-skills {
+   .wrapper-main-skills{
       margin-top: 83px;
       margin-bottom: 16px;
    }
    
-   .wrapper__main-skills H2{
+   .wrapper-main-skills__h2{
       display: block;
       font-weight: 700;
       font-size: 34px;
       margin-bottom: 69px;
    }
    
-   .wrapper__main-skills p{
+   .wrapper-main-skills__p{
       margin-bottom: 77px;
    }
    
    .programm-skills {
       display: block;
-      
-      
-      /*
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      border: 1px solid #070707;
-      gap: 15px 15px;
-      padding: 0;
-      */
-      
    }
    
    .programm-skills img{
@@ -559,32 +568,31 @@ hr{
       padding-bottom: 72px;
    }
    
-   .wrapper__main-portfolio H2{
+   .wrapper-main-portfolio__h2{
       padding-top: 81px;
       margin-bottom: 81px;
-      
    }
    
-   .portfolio-img figcaption {
+   .portfolio-img figcaption{
       padding-top: 32px;
       padding-bottom: 83px;
    }
    
-   .wrapper__footer {
+   .wrapper-footer {
       margin-top: 82px;
    }
    
-   .welcome-text{
+   .wrapper-footer__welcome{
       margin: 43px auto 47px;
    }
    
-   .mail-botton {
+   .footer__button {
       max-width: 350px;
-      margin: 0 auto 48px auto;
+      margin: 0 auto 86px auto;
       padding: 13px 97px 12px;
    }
    
-   .end-text {
+   .wrapper-footer__end {
       margin-top: 48px;
       padding-bottom: 114px;
       font-size: 18px;

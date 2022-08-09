@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
 
+   https://sass-scss.ru/documentation/sassscript/&_v_sassscript/
+   https://sass-scss.ru/documentation/sassscript/peremennie_po-umolchaniyu/
+   https://sass-scss.ru/documentation/sassscript/klyuchevie_argumenti/
+   https://sass-scss.ru/documentation/sassscript/klyuchevie_argumenti/
+   https://sass-scss.ru/documentation/pravila_i_direktivi/direktiva_import/
+   https://sass-scss.ru/documentation/miksini/
+ -->
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,100 +18,210 @@
    <script src="js/script.js"></script>
 </head>
 
-<body>
-   <div class="background__white">
-      <div class="wrapper__hero">
-         <div class="menu__burger">
-            <span></span>
-         </div>
-         <div class="wrapper__hero-header">
+<body class="page">
+   <div class="page__background-white">
+      <div class="wrapper">
+         <div class="page__hero-header">
             <header class="header">
-               <nav class="menu">
-                  <ul class="menu__list">
-                     <li class="bold"><a href="#">Home</a></li>
-                     <li class="medium"><a href="#">About me</a></li>
-                     <li class="medium"><a href="#">Skills</a></li>
-                     <li class="medium"><a href="#">Portfolio</a></li>
-                     <li class="medium"><a href="#">Contacts</a></li>
+                  <ul class="menu-list">
+                     <li class="menu-list__link menu-list__link_bold"><a href="#">Home</a></li>
+                     <li class="menu-list__link"><a href="#">About me</a></li>
+                     <li class="menu-list__link"><a href="#">Skills</a></li>
+                     <li class="menu-list__link"><a href="#">Portfolio</a></li>
+                     <li class="menu-list__link"><a href="#">Contacts</a></li>
                   </ul>
-               </nav>
+                  <div class="header__hero-burger">
+                     <span></span>
+                  </div>
             </header>
             <hr size="1px">
          </div>
-         <section class="wrapper__hero-name">
-            <h1 class="name">Denis<br>Novik</h1>
-            <p class="prof">UX | UI designer<br>24 years old, Minsk</p>
-            <div class="lang"><a class="ru" href="#">RU</a> | <a href="#">ENG</a></div>
-         </section>
-         <figure class="wrapper__hero-img">
-            <img src="img/avatar.jpg" alt="photo designer" class="full-img">
-            <img src="img/mobile-avatar.jpg" alt="photo designer" class="mobile-img">
+
+         <div class="page__hero-name">
+            <section class="hero-name">
+               <h1 class="hero-name__name">Denis<br>Novik</h1>
+               <p class="hero-name__prof">UX | UI designer<br>24 years old, Minsk</p>
+               <div class="hero-name__lang"><a href="#">RU</a> | <a href="#">ENG</a></div>
+            </section>
+         </div>
+         <figure class="hero-img">
+            <img src="img/avatar.jpg" alt="photo designer" class="hero-img__full-img">
+            <img src="img/mobile-avatar.jpg" alt="photo designer" class="hero-img__mobile-img">
          </figure>
       </div>
    </div>
 
-   <div class="background__grey">
-      <section class="wrapper__main-about">
-         <div class="margin-block">
-            <h2>About me</h2>
-            <div class="about-text">
-               <p>Hi, I'm Denis – UX/UI designer from Minsk.<br>
-                  I'm interested in design and everything connected with it.</p>
-               <p>I'm studying at courses "Web and mobile design<br>
-                  interfaces" in IT-Academy.</p>
-               <p>Ready to implement excellent projects<br>
-                  with wonderful people.</p>
+   <div class="page__background-grey">
+      <div class="wrapper">
+         <div class="page__about">
+            <section class="about">
+               <h2 class="about__title">About me</h2>
+               <div class="about-text">
+                  <p>Hi, I'm Denis – UX/UI designer from Minsk.<br>
+                     I'm interested in design and everything connected with it.</p>
+                  <p>I'm studying at courses "Web and mobile design<br>
+                     interfaces" in IT-Academy.</p>
+                  <p>Ready to implement excellent projects<br>
+                     with wonderful people.</p>
+               </div>
+         </section>
+         </div>
+      </div>
+   </div>
+
+   <div class="page__background-white">
+         <div class="wrapper">
+            <div class="page__skills">
+               <section class="skills">
+                  <h2 class="skills__h2">Skills</h2>
+                  <p class="skills__p">I work in such programs as</p>
+                  <figure class="programm-skills">
+                     <div class="programm-skill">
+                        <img src="img/ap.png" alt="Adobe photoshop" class="programm-skills__img">
+                        <p class="programm-skills__p">Adobe<br>photoshop</p>
+                        <div class="stars">
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="programm-skill">
+                        <img src="img/ai.svg" alt="Adobe illustrator" class="programm-skills__img">
+                        <p class="programm-skills__p">Adobe<br>illustrator</p>
+                        <div class="stars">
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="programm-skill">
+                        <img src="img/ae.svg" alt="Adobeafter effects" class="programm-skills__img">
+                        <p class="programm-skills__p">Adobe<br>after effects</p>
+                        <div class="stars">
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                        </div>
+                     </div>
+
+                     <div class="programm-skill">
+                        <img src="img/figma.svg" alt="Figma" class="programm-skills__img">
+                        <p class="programm-skills__p">Figma</p>
+                        <div class="stars stars-4">
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star programm-skills__star_active">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="programm-skills__star">
+                              <path d="M9.69807 0.85958C9.99792 -0.0606967 11.2998 -0.0606959 11.5997 0.859581L13.3508 6.23398C13.4849 6.64561 13.8687 6.92418 14.3016 6.92418H19.9623C20.9317 6.92418 21.3341 8.16521 20.5491 8.73398L15.9742 12.0486C15.6227 12.3033 15.4756 12.7555 15.6101 13.1682L17.3587 18.5349C17.6587 19.4557 16.6054 20.2227 15.8211 19.6544L11.2356 16.3321C10.8856 16.0784 10.4122 16.0784 10.0622 16.3321L5.47661 19.6544C4.69236 20.2227 3.63907 19.4557 3.93909 18.5348L5.68766 13.1682C5.82211 12.7555 5.67503 12.3033 5.32358 12.0486L0.748702 8.73398C-0.0363046 8.16521 0.366026 6.92418 1.33542 6.92418H6.99618C7.4291 6.92418 7.81286 6.6456 7.94698 6.23398L9.69807 0.85958Z"/>
+                           </svg>
+                        </div>
+                        
+                     </div>
+                  </figure>
+               </section>
             </div>
          </div>
-      </section>
    </div>
 
-   <div class="background__white">
-      <section class="wrapper__main-skills">
-         <h2>Skills</h2>
-         <p>I work in such programs as</p>
-         <figure class="programm-skills">
-            <img src="img/ap.svg" alt="Adobe photoshop">
-            <img src="img/ai.svg" alt="Adobe illustrator">
-            <img src="img/ae.svg" alt="Adobe after effects">
-            <img src="img/figma.svg" alt="Figma">
-         </figure>
-      </section>
-   </div>
-
-   <div class="background__grey">
-      <section class="wrapper__main-portfolio">
-         <h2>Portfolio</h2>
-         <figure class="portfolio-img">
-            <img src="img/fashion.jpg" alt="layout fashion store">
-            <figcaption class="underline">
-               <a href="#">Online fashion store - Homepage</a>
-            </figcaption>
-            <img src="img/reebok.jpg" alt="layout reebok store">
-            <figcaption class="underline">
-               <a href="#">Reebok Store - Concept</a>
-            </figcaption class="underline">
-            <img src="img/braun.jpg" alt="layout braun store">
-            <figcaption class="underline">
-               <a href="#">Braun Landing Page - Concept</a>
-            </figcaption>
-         </figure>
-      </section>
-   </div>
-
-   <div class="background__white">
-      <footer class="wrapper__footer">
-         <h2>Contacts</h2>
-         <p class="welcome-text">Want to know more or just chat?<br>You are welcome!</p>
-         <div class="mail-botton">
-            <a href="#">Send message</a>
+   <div class="page__background-grey">
+      
+         <div class="wrapper">
+            <div class="page__portfolio">
+               <section class="portfolio">
+                  <h2 class="portfolio__h2">Portfolio</h2>
+                  <figure class="portfolio-img">
+                     <img src="img/fashion.jpg" alt="layout fashion store">
+                     <figcaption class="portfolio-img__underline">
+                        <a href="#">Online fashion store - Homepage</a>
+                     </figcaption>
+                     <img src="img/reebok.jpg" alt="layout reebok store">
+                     <figcaption class="portfolio-img__underline">
+                        <a href="#">Reebok Store - Concept</a>
+                     </figcaption class="portfolio-img__underline">
+                     <img src="img/braun.jpg" alt="layout braun store">
+                     <figcaption class="portfolio-img__underline">
+                        <a href="#">Braun Landing Page - Concept</a>
+                     </figcaption>
+                  </figure> 
+               </section>
+            </div>
          </div>
+   </div>
 
-         <figure class="footer-icons">
-            <img src="img/icons.svg" alt="social media icons">
-         </figure>
-         <p class="end-text">Like me on<br>LinkedIn, Instagram, Behance, Dribble</p>
-      </footer>
+   <div class="page__background-white">
+      <div class="wrapper-footer">
+         <div class="page__footer">
+            <footer class="footer">
+            <h2 class="footer__h2">Contacts</h2>
+            <p class="footer__welcome">Want to know more or just chat?<br>You are welcome!</p>
+            <div class="footer__button">
+               <a href="#">Send message</a>
+            </div>
+         <div class="page__footer-icons">
+            <div class="footer-icons">
+               <div class="footer-icon">
+                  <a href="https://ru.linkedin.com/"><img src="img/sm-1.svg" alt="LinkedIn"></a>
+               </div>
+               <div class="footer-icon">
+                  <a href="https://www.instagram.com/"><img src="img/sm-2.svg" alt="Instagram"></a>
+               </div>
+               <div class="footer-icon">
+                  <a href="https://www.behance.net/"><img src="img/sm-3.svg" alt="Behance"></a>
+               </div>
+               <div class="footer-icon">
+                  <a href="https://dribbble.com/"><img src="img/sm-4.svg" alt="Dribble"></a>
+               </div>
+            </div>
+         </div>
+            <p class="footer__end">Like me on<br>LinkedIn, Instagram, Behance, Dribble</p>
+            </footer>
+         </div>
+      </div>
    </div>
 
 
